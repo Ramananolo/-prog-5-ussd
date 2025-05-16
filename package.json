@@ -1,0 +1,26 @@
+{
+  "name": "prog-5-ussd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramananolo/-prog-5-ussd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ramananolo/-prog-5-ussd/issues"
+  },
+  "homepage": "https://github.com/Ramananolo/-prog-5-ussd#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

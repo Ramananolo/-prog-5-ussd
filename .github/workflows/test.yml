@@ -1,0 +1,26 @@
+name: CI Test USSD Mvola
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Compiler TypeScript
+        run: npx tsc
+
+      - name: Lancer un test simulé
+        run: echo -e "1\n1\n500\n1234" | node dist/index.js
+
