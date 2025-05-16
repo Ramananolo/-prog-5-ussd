@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/index.ts",
-    "lint": "npx eslint 'src/**/*.{ts,js}'",
-    "build": "tsc"
+    "lint": "npx eslint 'src/**/*.{ts,js}'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,7 @@
   "homepage": "https://github.com/Ramananolo/-prog-5-ussd#readme",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.26.0",
     "@types/node": "^22.15.18",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
