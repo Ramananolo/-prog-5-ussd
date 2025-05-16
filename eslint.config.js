@@ -11,15 +11,14 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
-    },
-    linterOptions: {
       env: {
-        node: true, 
+        node: true,
       },
     },
     plugins: {
       '@typescript-eslint': tseslint.plugin,
     },
-    rules: {},
+    rules: {
+    },
   },
 ];
