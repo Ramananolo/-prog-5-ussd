@@ -1,22 +1,21 @@
+// eslint.config.js
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
 export default [
-  js.configs.recommended,
+  js.configs.recommended, 
+  ...tseslint.configs.recommended, 
   {
-    files: ['src/**/*.{ts,js}'],
+    files: ['**/*.ts', '**/*.js'],
     languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
       },
-      env: {
-        node: true,
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tseslint.plugin,
     },
     rules: {
     },
