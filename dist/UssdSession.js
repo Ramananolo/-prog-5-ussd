@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UssdSession = void 0;
-class UssdSession {
+export class UssdSession {
     constructor() {
         this.currentStep = 'main';
     }
@@ -12,4 +9,3 @@ class UssdSession {
         this.currentStep = step;
     }
 }
-exports.UssdSession = UssdSession;

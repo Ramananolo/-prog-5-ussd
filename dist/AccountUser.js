@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountUser = void 0;
-class AccountUser {
+export class AccountUser {
     constructor(solde, codeSecret) {
         this.solde = solde;
         this.codeSecret = codeSecret;
@@ -20,4 +17,3 @@ class AccountUser {
         return this.solde;
     }
 }
-exports.AccountUser = AccountUser;
