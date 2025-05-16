@@ -1,5 +1,5 @@
 import readline from 'readline';
-import { AccountUser } from './AccountUser';
+import { AccountUser } from './AccountUser.js';
 
 export class MenuHandler {
   private static user = new AccountUser(1000000, '1234');

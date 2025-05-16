@@ -1,5 +1,6 @@
-import { AccountUser } from './AccountUser';
+import { AccountUser } from './AccountUser.js';
 export class MenuHandler {
+    static user = new AccountUser(1000000, '1234');
     static async handleMainMenu(input, rl) {
         switch (input) {
             case "1":
@@ -249,4 +250,3 @@ export class MenuHandler {
         });
     }
 }
-MenuHandler.user = new AccountUser(1000000, '1234');

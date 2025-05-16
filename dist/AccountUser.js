@@ -1,4 +1,6 @@
 export class AccountUser {
+    solde;
+    codeSecret;
     constructor(solde, codeSecret) {
         this.solde = solde;
         this.codeSecret = codeSecret;

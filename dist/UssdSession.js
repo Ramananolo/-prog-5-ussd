@@ -1,4 +1,5 @@
 export class UssdSession {
+    currentStep;
     constructor() {
         this.currentStep = 'main';
     }
