@@ -1,26 +1,48 @@
-name: CI Test USSD Mvola
+name: Test USSD App
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Cloner le dépôt
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Installer Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 20
 
-      - name: Installer les dépendances
+      - name: Install dependencies
         run: npm install
 
-      - name: Compiler TypeScript
+      - name: Compile TypeScript
         run: npx tsc
 
-      - name: Lancer un test simulé
-        run: echo -e "1\n1\n500\n1234" | node dist/index.js
+      # Test 1: Consultation de solde
+      - name: Test - Consultation de solde
+        run: echo -e "1\n5\n1234" | node dist/index.js
 
+      # Test 2: Achat de crédit pour moi (valide)
+      - name: Test - Achat de crédit pour moi
+        run: echo -e "1\n1\n1\n500\n1234" | node dist/index.js
+
+      # Test 3: Achat de crédit pour autre numéro (valide)
+      - name: Test - Achat de crédit pour autre numéro
+        run: echo -e "1\n1\n2\n0341234567\n1000\n1234" | node dist/index.js
+
+      # Test 4: Transfert d'argent (valide)
+      - name: Test - Transfert d'argent
+        run: echo -e "1\n2\n0347654321\n2000\n1234" | node dist/index.js
+
+      # Test 5: Retrait d'argent (valide)
+      - name: Test - Retrait d'argent
+        run: echo -e "1\n4\n1000\n1234" | node dist/index.js
+
+      # Test 6: Code secret invalide
+      - name: Test - Code secret invalide
+        run: echo -e "1\n1\n1\n500\n9999" | node dist/index.js
