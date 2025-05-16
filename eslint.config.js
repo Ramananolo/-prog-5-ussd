@@ -12,10 +12,14 @@ export default [
         sourceType: 'module',
       },
     },
+    linterOptions: {
+      env: {
+        node: true, 
+      },
+    },
     plugins: {
       '@typescript-eslint': tseslint.plugin,
     },
-    rules: {
-    },
+    rules: {},
   },
 ];
