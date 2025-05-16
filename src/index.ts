@@ -1,5 +1,5 @@
 import readline from 'readline';
-import { MenuHandler } from './MenuHandler';
+import { MenuHandler } from './MenuHandler.js';
 
 const rl = readline.createInterface({
   input: process.stdin,
